@@ -7,7 +7,7 @@ if (!is_dir($upload_directory)) {
     mkdir($upload_directory, 0777, true);
 }
 
-// Handle Text File
+// Text File
 if (isset($_FILES['text_file'])) {
     $uploaded_text_file = $upload_directory . basename($_FILES['text_file']['name']);
     $temporary_file = $_FILES['text_file']['tmp_name'];
@@ -23,7 +23,7 @@ if (isset($_FILES['text_file'])) {
 }
 
 
-// Handle PDF File
+// PDF File
 if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === UPLOAD_ERR_OK) {
     $uploaded_pdf_file = $upload_directory . basename($_FILES['pdf_file']['name']);
     $temporary_file = $_FILES['pdf_file']['tmp_name'];
@@ -37,7 +37,7 @@ if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === UPLOAD_ERR_OK
 }
 
 
-// Handle Audio File
+// Audio File
 if (isset($_FILES['audio_file']) && $_FILES['audio_file']['error'] === UPLOAD_ERR_OK) {
     $uploaded_audio_file = $upload_directory . basename($_FILES['audio_file']['name']);
     $temporary_file = $_FILES['audio_file']['tmp_name'];
@@ -50,7 +50,7 @@ if (isset($_FILES['audio_file']) && $_FILES['audio_file']['error'] === UPLOAD_ER
     }
 }
 
-// Handle Image File
+// Image File
 if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
     $uploaded_image_file = $upload_directory . basename($_FILES['image_file']['name']);
     $temporary_file = $_FILES['image_file']['tmp_name'];
@@ -60,6 +60,19 @@ if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] === UPLOAD_ER
         echo '<img src="' . $relative_path . basename($_FILES['image_file']['name']) . '" width="600" height="400">';
     } else {
         echo 'Failed to upload Image file';
+    }
+}
+
+// Video File
+if (isset($_FILES['video_file']) && $_FILES['video_file']['error'] === UPLOAD_ERR_OK) {
+    $uploaded_video_file = $upload_directory . basename($_FILES['video_file']['name']);
+    $temporary_file = $_FILES['video_file']['tmp_name'];
+
+    if (move_uploaded_file($temporary_file, $uploaded_video_file)) {
+        echo '<h3>Uploaded Video File:</h3>';
+        echo '<video width="600" height="400" controls><source src="' . $relative_path . basename($_FILES['video_file']['name']) . '" type="video/mp4">Your browser does not support the video tag.</video>';
+    } else {
+        echo 'Failed to upload video file';
     }
 }
 

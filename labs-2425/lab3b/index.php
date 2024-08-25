@@ -1,5 +1,5 @@
 <?php
-if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['audio_file'])) {
+if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['audio_file']) || isset($_FILES['video_file'])) {
   echo '<pre>';
   var_dump($_FILES);
   exit;
@@ -32,33 +32,42 @@ if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['
 
     <form action="uploaded.php" method="post" enctype="multipart/form-data">
 
-      <div class="p-card">
+<!-- This is the section for uploading a text file -->
+      <div class="p-card"> 
             <h3>Text File</h3>
             <p class="p-card__content">
             <input type="file" name="text_file" accept=".txt" />
             </p>
         </div>
-
+<!-- This is the section for uploading a pdf file -->
         <div class="p-card">
             <h3>PDF File</h3>
             <p class="p-card__content">
             <input type="file" name="pdf_file" accept=".pdf" />
             </p>
         </div>
-
+<!-- This is the section for uploading a audio file -->
         <div class="p-card">
             <h3>Audio File</h3>
             <p class="p-card__content">
             <input type="file" name="audio_file" accept=".mp3" />
             </p>
         </div>
-
+<!-- This is the section for uploading a image file -->
         <div class="p-card">
             <h3>Image File</h3>
             <p class="p-card__content">
             <input type="file" name="image_file" accept=".jpg, .jpeg, .png"/>
             </p>
         </div>
+<!-- This is the section for uploading a text file -->
+        <div class="p-card">
+            <h3>Video File</h3>
+            <p class="p-card__content">
+            <input type="file" name="video_file" accept=".mp4"/>
+            </p>
+        </div>
+
 
         <div>
             <button type="submit">
