@@ -6,7 +6,7 @@ if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['
 }
 ?>
 
-?> 
+
 <html>
 <head>  
     <meta charset="utf-8">
@@ -45,11 +45,18 @@ if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['
             <input type="file" name="pdf_file" accept=".pdf" />
             </p>
         </div>
-        
+
         <div class="p-card">
             <h3>Audio File</h3>
             <p class="p-card__content">
             <input type="file" name="audio_file" accept=".mp3" />
+            </p>
+        </div>
+
+        <div class="p-card">
+            <h3>Image File</h3>
+            <p class="p-card__content">
+            <input type="file" name="image_file" accept=".jpg, .jpeg, .png"/>
             </p>
         </div>
 
