@@ -1,5 +1,5 @@
 <?php
-if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['audio_file']) || isset($_FILES['video_file'])) {
+if (isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['audio_file']) || isset($_FILES['video_file']) || isset($_FILES['image_file'])) {
   echo '<pre>';
   var_dump($_FILES);
   exit;
