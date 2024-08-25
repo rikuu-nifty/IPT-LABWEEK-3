@@ -1,0 +1,12 @@
+SCRUM
+- breaks long waterfall process delivery into smaller cycles
+-ensures end product meets the final requirements of the customer
+
+EXREME PROGRAMMING (XP)
+-promote teamwork
+-promotes continuos feedback with client and development teams
+-suitable for projects with indistinct and highly changing requirements
+
+
+Dynamic Software Development Method (DSDM)
+-It focuses on frequent delivery of product cycles, and development is iterative and incremental.

@@ -1,9 +1,10 @@
 <?php
-if(isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['audio_file']) || isset($_FILES['audio_file'])|| isset($_FILES['video_file'])){
+if (isset($_FILES['pdf_file']) || isset($_FILES['text_file'])) {
   echo '<pre>';
   var_dump($_FILES);
   exit;
 }
+
 ?> 
 <html>
 <head>
@@ -29,7 +30,8 @@ if(isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['a
     <h4>File Upload</h4>
 
     <form action="uploaded.php" method="post" enctype="multipart/form-data">
-        <div class="p-card">
+
+      <div class="p-card">
             <h3>Text File</h3>
             <p class="p-card__content">
             <input type="file" name="text_file" accept=".txt" />
@@ -43,32 +45,13 @@ if(isset($_FILES['pdf_file']) || isset($_FILES['text_file']) || isset($_FILES['a
             </p>
         </div>
 
-        <div class="p-card">
-            <h3>Audio File</h3>
-            <p class="p-card__content">
-            <input type="file" name="audio_file" accept=".mp3" />
-            </p>
-        </div>
-
-        <div class="p-card">
-            <h3>Image File</h3>
-            <p class="p-card__content">
-            <input type="file" name="image_file" accept=".jpg, .jpeg, .png"/>
-            </p>
-        </div>
-
-        <div class="p-card">
-            <h3>Video File</h3>
-            <p class="p-card__content">
-            <input type="file" name="video_file" accept=".mp4"/>
-            </p>
-        </div>
-
         <div>
             <button type="submit">
                 Upload
             </button>
         </div>
+
+
     </form>
     </div>
   <div class="col">
